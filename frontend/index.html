@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Check In</title>
+
+<link rel="stylesheet" href="style.css?v=2">
+</head>
+<body>
+
+<div class="dashboard">
+
+<!-- Sidebar -->
+<aside class="sidebar">
+<h2>✅ Check In</h2>
+
+<nav>
+<a href="#" class="active">🏠 My Tasks</a>
+<a href="#">📅 Today</a>
+<a href="#">⏰ Upcoming</a>
+<a href="#">📊 Analytics</a>
+<a href="#">⚙️ Settings</a>
+</nav>
+</aside>
+
+<!-- Main Content -->
+<main class="main-content">
+
+<header class="top-header">
+
+<div class="header-left">
+<h1>Good Morning, Sharon 👋</h1>
+<p>Friday, 7 August</p>
+</div>
+
+<div class="header-right">
+
+<div class="search-box">
+<input
+type="text"
+placeholder="Search tasks..."
+>
+</div>
+
+<button class="notification-btn">
+🔔
+</button>
+
+<div class="profile-placeholder"></div>
+
+</div>
+
+</header>
+
+<div class="task-card">
+
+<div class="task-top">
+
+<input
+type="text"
+id="taskInput"
+placeholder="What do you need to get done?"
+>
+
+<button id="addTaskBtn">+ Add Task</button>
+
+</div>
+
+<ul id="taskList"></ul>
+
+</div>
+
+</main>
+
+<!-- Right Panel -->
+<aside class="right-panel">
+
+<div class="card">
+
+<h3>Focus Timer</h3>
+
+<div class="timer-circle">
+25:00
+</div>
+
+<button>Start</button>
+
+</div>
+
+<div class="card">
+
+<h3>Task Overview</h3>
+
+<p>Total Tasks: <span id="totalTasks">0</span></p>
+<p>Completed: <span id="completedTasks">0</span></p>
+
+</div>
+
+</aside>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
