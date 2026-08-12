@@ -17,44 +17,49 @@ display: grid;
 grid-template-columns: 250px 1fr 320px;
 min-height: 100vh;
 }
-
-/* 👇 PASTE THE NEW SIDEBAR CSS HERE */
+/* Sidebar */
 .sidebar {
 background: white;
-padding: 30px 20px;
+padding: 20px 18px;
 border-right: 1px solid #ece7ff;
 display: flex;
 flex-direction: column;
 }
 
 .sidebar h2 {
-font-size: 32px;
-color: #5e35f2;
-margin-bottom: 8px;
+font-size: 20px;
+color: #4B0082;
+margin-bottom: 4px;
 }
 
 .sidebar p {
+font-size: 12px;
 color: #888;
-margin-bottom: 40px;
+margin-bottom: 25px;
 }
 
 .sidebar nav {
 display: flex;
 flex-direction: column;
-gap: 12px;
+gap: 6px;
 }
 
 .sidebar nav a {
+display: flex;
+align-items: center;
+gap: 10px;
+font-size: 14px;
+font-weight: 500;
 text-decoration: none;
-color: #444;
-padding: 14px 18px;
-border-radius: 14px;
-transition: 0.3s;
+color: #555;
+padding: 11px 14px;
+border-radius: 10px;
+transition: all 0.25s ease;
 }
 
 .sidebar nav a.active,
 .sidebar nav a:hover {
-background: linear-gradient(90deg,#7b4dff,#5e35f2);
+background:#4b0082;
 color: white;
 }
 
@@ -86,7 +91,7 @@ font-size:16px;
 .task-top button{
 width:180px;
 height:60px;
-background:#6d3df2;
+background:#4b0082;
 color:white;
 border:none;
 border-radius:14px;
@@ -97,7 +102,7 @@ transition:.3s;
 }
 
 .task-top button:hover{
-background:#5930d8;
+background:#4b0082;
 }
 
 /* Today's Tasks heading */
@@ -127,7 +132,7 @@ font-size:24px;
 .timer-circle{
 width:200px;
 height:200px;
-border:10px solid #6d3df2;
+border:10px solid #4b0082;
 border-radius:50%;
 display:flex;
 justify-content:center;
@@ -135,7 +140,7 @@ align-items:center;
 margin:20px auto;
 font-size:34px;
 font-weight:bold;
-color:#6d3df2;
+color:#4b0082;
 }
 #taskList{
 list-style:none;
@@ -153,7 +158,7 @@ align-items:center;
 margin-bottom:15px;
 }
 #taskList button{
-background:#ff4d6d;
+background: #d8bfd8;;
 color:white;
 border:none;
 padding:8px 14px;
@@ -162,7 +167,7 @@ cursor:pointer;
 }
 
 #taskList button:hover{
-background:#e6395c;
+background:#663399;
 }
 /* =========================
 TOP HEADER
@@ -181,9 +186,10 @@ color:#222;
 margin-bottom:8px;
 }
 
-.header-left p{
-color:#8a8a8a;
-font-size:15px;
+.header-left p#currentDate {
+color: #4B0082;
+font-size: 15px;
+font-weight: 700;
 }
 
 .header-right{
@@ -227,7 +233,7 @@ min-width:48px;
 min-height:48px;
 border-radius:50%;
 background:#ece7ff;
-border:2px dashed #6d3df2;
+border:2px dashed #4b0082;
 
 display:flex;
 justify-content:center;
@@ -272,10 +278,882 @@ font-size: 16px;
 width: 20px;
 height: 20px;
 cursor: pointer;
-accent-color: #6d3df2;
+accent-color: #4b0082;
 }
 
 .task-item .completed {
 text-decoration: line-through;
 color: #999;
+}
+/* =========================
+RESPONSIVE DESIGN
+========================= */
+
+/* Tablets */
+@media (max-width: 1000px) {
+.dashboard {
+grid-template-columns: 200px 1fr;
+}
+
+.right-panel {
+display: none;
+}
+
+.sidebar {
+padding: 20px 14px;
+}
+
+.sidebar h2 {
+font-size: 20px;
+}
+
+.main-content {
+padding: 25px;
+}
+}
+
+
+/* Mobile phones */
+@media (max-width: 700px) {
+.dashboard {
+display: block;
+min-height: 100vh;
+}
+
+/* Sidebar becomes a top navigation */
+.sidebar {
+width: 100%;
+padding: 15px;
+border-right: none;
+border-bottom: 1px solid #ece7ff;
+}
+
+.sidebar h2 {
+font-size: 20px;
+margin-bottom: 2px;
+}
+
+.sidebar p {
+font-size: 11px;
+margin-bottom: 15px;
+}
+
+.sidebar nav {
+flex-direction: row;
+gap: 5px;
+overflow-x: auto;
+}
+
+.sidebar nav a {
+font-size: 12px;
+padding: 8px 10px;
+white-space: nowrap;
+}
+
+/* Main content */
+.main-content {
+padding: 18px 15px;
+}
+
+/* Main heading */
+.main-content h1 {
+font-size: 26px;
+}
+
+.main-content h2 {
+font-size: 20px;
+}
+
+/* Search */
+.search-bar {
+width: 100%;
+}
+
+/* Task input area */
+.task-input {
+width: 100%;
+}
+
+/* Task cards */
+.task-card {
+padding: 15px;
+}
+
+/* Buttons */
+button {
+font-size: 13px;
+padding: 9px 14px;
+}
+
+/* Right-side panels */
+.right-panel {
+display: none;
+}
+}
+
+
+/* Very small phones */
+@media (max-width: 400px) {
+.main-content {
+padding: 15px 12px;
+}
+
+.main-content h1 {
+font-size: 23px;
+}
+
+.sidebar nav a {
+font-size: 11px;
+padding: 7px 9px;
+}
+
+.task-card {
+padding: 12px;
+}
+}
+/* =========================
+FOCUS TIMER
+========================= */
+
+.focus-card {
+padding: 24px;
+}
+
+.focus-header {
+display: flex;
+justify-content: space-between;
+align-items: center;
+margin-bottom: 18px;
+}
+
+.focus-header h3 {
+font-size: 20px;
+margin: 0;
+color: #222;
+}
+
+.focus-settings {
+font-size: 18px;
+cursor: pointer;
+}
+
+.timer-modes {
+display: grid;
+grid-template-columns: repeat(4, 1fr);
+gap: 3px;
+width: 100%;
+margin-bottom: 22px;
+background: #f5f0fa;
+padding: 4px;
+border-radius: 10px;
+overflow: hidden;
+}
+
+.timer-mode {
+width: 100%;
+min-width: 0;
+border: none;
+background: transparent;
+color: #666;
+padding: 8px 2px;
+border-radius: 7px;
+font-size: 11px;
+cursor: pointer;
+white-space: normal;
+text-align: center;
+line-height: 1.2;
+}
+
+.timer-mode.active {
+background: #4B0082;
+color: white;
+}
+
+.timer-circle {
+width: 170px;
+height: 170px;
+border: 8px solid #4B0082;
+border-radius: 50%;
+display: flex;
+justify-content: center;
+align-items: center;
+margin: 25px auto 18px;
+font-size: 30px;
+font-weight: 600;
+color: #4B0082;
+}
+
+.focus-label {
+text-align: center;
+color: #888;
+font-size: 13px;
+margin-bottom: 18px;
+}
+
+.timer-controls {
+display: flex;
+justify-content: center;
+gap: 10px;
+}
+
+.start-timer-btn,
+.stop-timer-btn {
+border: none;
+border-radius: 9px;
+padding: 11px 20px;
+font-size: 13px;
+font-weight: 600;
+cursor: pointer;
+}
+
+.start-timer-btn {
+background: #4B0082;
+color: white;
+}
+
+.stop-timer-btn {
+background: #f1e8f7;
+color: #4B0082;
+}
+
+.start-timer-btn:hover {
+background: #360061;
+}
+
+.stop-timer-btn:hover {
+background: #e6d8ef;
+}
+/* =========================
+TASK CATEGORIES
+========================= */
+
+.task-categories {
+display: flex;
+gap: 8px;
+margin-bottom: 18px;
+flex-wrap: wrap;
+}
+
+.category-btn {
+border: 1px solid #e5dced;
+background: white;
+color: #666;
+padding: 8px 14px;
+border-radius: 20px;
+font-size: 12px;
+cursor: pointer;
+transition: 0.2s ease;
+}
+
+.category-btn:hover {
+border-color: #4B0082;
+color: #4B0082;
+}
+
+.category-btn.active {
+background: #4B0082;
+color: white;
+border-color: #4B0082;
+}
+/* ===============================
+CATEGORY BUTTONS
+================================ */
+
+.task-categories {
+display: flex;
+gap: 8px;
+margin-bottom: 20px;
+flex-wrap: wrap;
+}
+
+.category-btn {
+border: none;
+padding: 8px 14px;
+border-radius: 20px;
+font-size: 12px;
+font-weight: 600;
+cursor: pointer;
+transition: 0.2s ease;
+color: #4a3a4f;
+}
+
+/* All */
+.category-btn[data-category="all"] {
+background: #f3d6e8;
+}
+
+/* School Work */
+.category-btn[data-category="school"] {
+background: #f8c8dc;
+color:#301934
+}
+
+/* House Chores */
+.category-btn[data-category="chores"] {
+background: #f5b5d0;
+}
+
+/* Personal */
+.category-btn[data-category="personal"] {
+background: #f9d8e8;
+}
+
+/* Job */
+.category-btn[data-category="job"] {
+background: #f2a9c7;
+}
+
+/* Business */
+.category-btn[data-category="business"] {
+background: #e98eb5;
+}
+
+/* Other */
+.category-btn[data-category="other"] {
+background: #f6c1d8;
+}
+
+/* Hover */
+.category-btn:hover {
+transform: translateY(-1px);
+filter: brightness(0.97);
+}
+
+/* Active category */
+.category-btn.active {
+background: #4B0082;
+color: white;
+}
+/* ===============================
+TASK CATEGORY DROPDOWN
+================================ */
+
+#taskCategory {
+height: 42px;
+min-width: 135px;
+padding: 0 38px 0 14px;
+
+border: 1px solid #f1c6d9;
+border-radius: 12px;
+
+background-color: #d8bfd8;
+color: #301934;
+
+font-size: 12px;
+font-weight: 600;
+
+cursor: pointer;
+outline: none;
+
+appearance: none;
+-webkit-appearance: none;
+
+/* Pink dropdown arrow */
+background-image:
+linear-gradient(45deg, transparent 50%, #301934 50%),
+linear-gradient(135deg, #A865B5 50%, transparent 50%);
+
+background-position:
+calc(100% - 16px) 18px,
+calc(100% - 11px) 18px;
+
+background-size: 5px 5px, 5px 5px;
+background-repeat: no-repeat;
+
+transition: all 0.2s ease;
+}
+
+/* Hover */
+#taskCategory:hover {
+border-color: #e98eb5;
+background-color: #fff0f6;
+}
+
+/* When selected/focused */
+#taskCategory:focus {
+border-color: #4B0082;
+background-color: #ffffff;
+box-shadow: 0 0 0 3px rgba(75, 0, 130, 0.10);
+}
+
+/* Dropdown options */
+#taskCategory option {
+background: white;
+color: #4B0082;
+font-size: 13px;
+font-weight: 500;
+}
+/* ===============================
+TASK CATEGORY BADGES
+================================ */
+
+.task-actions {
+display: flex;
+align-items: center;
+gap: 10px;
+}
+
+.task-category-badge {
+padding: 6px 12px;
+border-radius: 20px;
+font-size: 11px;
+font-weight: 600;
+white-space: nowrap;
+}
+
+/* School Work */
+.category-school {
+background: #e8d8f5;
+color: #6a1b9a;
+}
+
+/* House Chores */
+.category-chores {
+background: #f8d1e2;
+color: #c2185b;
+}
+
+/* Personal */
+.category-personal {
+background: #f9d8e8;
+color: #ad527b;
+}
+
+/* Job */
+.category-job {
+background: #f2c4d8;
+color: #a33b68;
+}
+
+/* Business */
+.category-business {
+background: #f0b3cd;
+color: #8e3159;
+}
+
+/* Other */
+.category-other {
+background: #f6d1df;
+color: #a94d70;
+}
+/* ===============================
+TASK CATEGORY TAGS
+================================ */
+
+.task-category-tag {
+padding: 6px 12px;
+border-radius: 20px;
+font-size: 11px;
+font-weight: 600;
+white-space: nowrap;
+margin-left: auto;
+margin-right: 12px;
+}
+
+/* School Work */
+.task-category-tag.school-work {
+background: #f8c8dc;
+color: #301934;
+}
+
+/* House Chores */
+.task-category-tag.house-chores {
+background: #f5b5d0;
+color: #301934;
+}
+
+/* Personal */
+.task-category-tag.personal {
+background: #f9d8e8;
+color: #301934;
+}
+
+/* Job */
+.task-category-tag.job {
+background: #f2a9c7;
+color: #301934;
+}
+
+/* Business */
+.task-category-tag.business {
+background: #e98eb5;
+color: #301934;
+}
+
+/* Other */
+.task-category-tag.other {
+background: #f6c1d8;
+color: #301934;
+}
+
+/* Task category labels */
+
+.task-category {
+display: inline-block;
+padding: 5px 10px;
+border-radius: 8px;
+font-size: 12px;
+font-weight: 600;
+margin-left: 8px;
+}
+
+/* School Work */
+.category-school-work {
+background: #f8c8dc;
+color: #6b3150;
+}
+
+/* House Chores */
+.category-house-chores {
+background: #f5b5d0;
+color: #6b3150;
+}
+
+/* Personal */
+.category-personal {
+background: #f9d8e8;
+color: #6b3150;
+}
+
+/* Job */
+.category-job {
+background: #f2a9c7;
+color: #6b3150;
+}
+
+/* Business */
+.category-business {
+background: #e98eb5;
+color: #6b3150;
+}
+
+/* Other */
+.category-other {
+background: #f6c1d8;
+color: #6b3150;
+}
+/* ===============================
+TASK ANALYTICS
+================================ */
+
+.analytics-section {
+display: none;
+background: white;
+border-radius: 20px;
+padding: 30px;
+box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.analytics-header {
+margin-bottom: 25px;
+}
+
+.analytics-header h2 {
+color: #4B0082;
+font-size: 28px;
+margin-bottom: 6px;
+}
+
+.analytics-header p {
+color: #888;
+font-size: 14px;
+}
+
+.analytics-grid {
+display: grid;
+grid-template-columns: repeat(4, 1fr);
+gap: 15px;
+margin-bottom: 25px;
+}
+
+.analytics-card {
+background: #fff5f9;
+border: 1px solid #f1d7e5;
+border-radius: 16px;
+padding: 20px;
+display: flex;
+align-items: center;
+gap: 14px;
+}
+
+.analytics-icon {
+width: 42px;
+height: 42px;
+border-radius: 12px;
+background: #f3d6e8;
+display: flex;
+align-items: center;
+justify-content: center;
+font-size: 20px;
+}
+
+.analytics-card p {
+color: #888;
+font-size: 12px;
+margin-bottom: 5px;
+}
+
+.analytics-card h3 {
+color: #4B0082;
+font-size: 24px;
+}
+
+.category-analytics-card {
+background: #faf7ff;
+border: 1px solid #ece3f5;
+border-radius: 16px;
+padding: 22px;
+}
+
+.category-analytics-card h3 {
+color: #4B0082;
+font-size: 19px;
+margin-bottom: 18px;
+}
+
+.category-stat {
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 12px 0;
+border-bottom: 1px solid #eee7f3;
+color: #555;
+font-size: 14px;
+}
+
+.category-stat:last-child {
+border-bottom: none;
+}
+
+.category-stat strong {
+color: #4B0082;
+background: #f3d6e8;
+padding: 5px 11px;
+border-radius: 20px;
+font-size: 12px;
+}
+
+/*MOBILE ANALYICS*/
+@media (max-width: 900px) {
+
+.analytics-grid {
+grid-template-columns: repeat(2, 1fr);
+}
+
+}
+
+@media (max-width: 600px) {
+
+.analytics-section {
+padding: 20px;
+}
+
+.analytics-header h2 {
+font-size: 23px;
+}
+
+.analytics-grid {
+grid-template-columns: 1fr;
+}
+
+}
+/* ===============================
+FINAL RESPONSIVE DESIGN
+================================ */
+
+/* TABLETS */
+@media (max-width: 1000px) {
+
+.dashboard {
+grid-template-columns: 200px 1fr;
+}
+
+.right-panel {
+display: none;
+}
+
+.main-content {
+padding: 25px;
+}
+
+.task-top {
+flex-wrap: wrap;
+}
+
+.task-top input {
+min-width: 200px;
+}
+
+#taskCategory {
+flex: 1;
+min-width: 140px;
+}
+
+.task-top button {
+width: auto;
+flex: 1;
+min-width: 140px;
+}
+
+}
+
+
+/* MOBILE */
+@media (max-width: 700px) {
+
+.dashboard {
+display: block;
+min-height: 100vh;
+}
+
+/* Sidebar */
+.sidebar {
+width: 100%;
+padding: 12px;
+border-right: none;
+border-bottom: 1px solid #ece7ff;
+}
+
+.sidebar h2 {
+text-align: center;
+margin-bottom: 12px;
+}
+
+.sidebar nav {
+flex-direction: row;
+overflow-x: auto;
+gap: 6px;
+padding-bottom: 4px;
+}
+
+.sidebar nav a {
+white-space: nowrap;
+font-size: 12px;
+padding: 9px 12px;
+}
+
+
+/* Main content */
+.main-content {
+padding: 15px;
+gap: 20px;
+}
+
+
+/* Header */
+.top-header {
+flex-direction: column;
+align-items: stretch;
+gap: 15px;
+}
+
+.header-left h1 {
+font-size: 25px;
+}
+
+.header-right {
+width: 100%;
+margin-left: 0;
+gap: 8px;
+}
+
+
+/* Search */
+.search-box {
+flex: 1;
+}
+
+.search-box input {
+width: 100%;
+}
+
+
+/* Task card */
+.task-card {
+padding: 18px;
+border-radius: 16px;
+}
+
+
+/* Category buttons */
+.task-categories {
+gap: 6px;
+}
+
+.category-btn {
+padding: 7px 11px;
+font-size: 11px;
+}
+
+
+/* Task input */
+.task-top {
+flex-direction: column;
+gap: 10px;
+}
+
+.task-top input {
+width: 100%;
+min-width: 0;
+}
+
+#taskCategory {
+width: 100%;
+height: 50px;
+}
+
+.task-top button {
+width: 100%;
+height: 50px;
+}
+
+
+/* Task list */
+#taskList li {
+padding: 14px;
+gap: 10px;
+}
+
+.task-item {
+min-width: 0;
+flex-wrap: wrap;
+}
+
+.task-item span {
+word-break: break-word;
+}
+
+
+/* Hide right panel on phones */
+.right-panel {
+display: none;
+}
+
+}
+
+
+/* SMALL PHONES */
+@media (max-width: 400px) {
+
+.main-content {
+padding: 12px;
+}
+
+.header-left h1 {
+font-size: 22px;
+}
+
+.task-card {
+padding: 14px;
+}
+
+.category-btn {
+padding: 6px 9px;
+font-size: 10px;
+}
+
+#taskList li {
+padding: 12px;
+}
+
 }

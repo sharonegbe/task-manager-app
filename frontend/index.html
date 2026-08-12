@@ -16,11 +16,25 @@
 <h2>✅ Check In</h2>
 
 <nav>
-<a href="#" class="active">🏠 My Tasks</a>
-<a href="#">📅 Today</a>
-<a href="#">⏰ Upcoming</a>
-<a href="#">📊 Analytics</a>
-<a href="#">⚙️ Settings</a>
+<a href="#" class="menu-link active" data-section="tasks">
+🏠 My Tasks
+</a>
+
+<a href="#" class="menu-link" data-section="today">
+📅 Today
+</a>
+
+<a href="#" class="menu-link" data-section="upcoming">
+⏰ Upcoming
+</a>
+
+<a href="#" class="menu-link" data-section="analytics">
+📊 Analytics
+</a>
+
+<a href="#" class="menu-link" data-section="settings">
+⚙️ Settings
+</a>
 </nav>
 </aside>
 
@@ -30,8 +44,8 @@
 <header class="top-header">
 
 <div class="header-left">
-<h1>Good Morning, Sharon 👋</h1>
-<p>Friday, 7 August</p>
+<h1 id="welcomeMessage">Hello</h1>
+<p id="currentDate"></p>
 </div>
 
 <div class="header-right">
@@ -39,6 +53,7 @@
 <div class="search-box">
 <input
 type="text"
+id="searchInput"
 placeholder="Search tasks..."
 >
 </div>
@@ -55,6 +70,47 @@ placeholder="Search tasks..."
 
 <div class="task-card">
 
+<div class="task-categories">
+
+<button class="category-btn active" data-category="all">
+All
+</button>
+
+<button class="category-btn" data-category="school">
+School Work
+</button>
+
+<button class="category-btn" data-category="chores">
+House Chores
+</button>
+
+<button class="category-btn" data-category="personal">
+Personal
+</button>
+
+<button class="category-btn" data-category="job">
+
+        Job
+
+    </button>
+
+
+
+    <button class="category-btn" data-category="business">
+
+        Business
+
+    </button>
+
+
+
+    <button class="category-btn" data-category="other">
+
+        Other
+
+    </button>
+</div>
+
 <div class="task-top">
 
 <input
@@ -63,28 +119,78 @@ id="taskInput"
 placeholder="What do you need to get done?"
 >
 
+<select id="taskCategory">
+<option value="School Work">School Work</option>
+<option value="House Chores">House Chores</option>
+<option value="Personal">Personal</option> 
+<option value="Job">Job</option>
+<option value="Business">Business</option>
+<option value="Other">Other</option>   
+</select>
+
+<input
+type="date"
+id="taskDueDate"
+>
+
 <button id="addTaskBtn">+ Add Task</button>
 
 </div>
 
 <ul id="taskList"></ul>
+<!-- Analytics Section -->
+<section id="analyticsSection" class="analytics-section">
 
+<div class="analytics-header">
+<h2>📊 Task Analytics</h2>
+<p>See how you're progressing with your tasks.</p>
 </div>
 
+<div class="analytics-grid">
+
+<div class="analytics-card">
+<span class="analytics-icon">📋</span>
+<div>
+<p>Total Tasks</p>
+<h3 id="analyticsTotal">0</h3>
+</div>
+</div>
 </main>
 
 <!-- Right Panel -->
 <aside class="right-panel">
 
-<div class="card">
+<div class="card focus-card">
 
+<div class="focus-header">
 <h3>Focus Timer</h3>
-
-<div class="timer-circle">
-25:00
+<span class="focus-settings">⚙️</span>
 </div>
 
-<button>Start</button>
+<div class="timer-modes">
+<button class="timer-mode active">Timer</button>
+<button class="timer-mode">Short Break</button>
+<button class="timer-mode">Long Break</button>
+<button class="timer-mode">Custom</button>
+</div>
+
+<div class="timer-circle">
+<span id="timerDisplay">25:00</span>
+</div>
+
+<p class="focus-label">Focusing on...</p>
+
+<div class="timer-controls">
+
+<button id="startTimerBtn" class="start-timer-btn">
+▶ Start
+</button>
+
+<button id="stopTimerBtn" class="stop-timer-btn">
+■ Stop
+</button>
+
+</div>
 
 </div>
 
