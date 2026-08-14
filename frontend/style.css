@@ -387,7 +387,10 @@ padding: 9px 14px;
 
 /* Right-side panels */
 .right-panel {
-display: none;
+display: flex;
+flex-direction: column;
+gap: 20px;
+width: 100%;
 }
 }
 
@@ -1125,8 +1128,12 @@ word-break: break-word;
 
 
 /* Hide right panel on phones */
+/* Show right panel on mobile */
 .right-panel {
-display: none;
+display: flex;
+flex-direction: column;
+gap: 20px;
+width: 100%;
 }
 
 }
